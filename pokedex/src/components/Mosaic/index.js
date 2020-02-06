@@ -35,14 +35,28 @@ const Mosaic = ({ pokemons }) => {
     setTemporalPokemons(newPokemons)
     setCurrentPage(currentPage - 1)
   }
+  const goToEnd = () => {
+    let begin = (totalPages - 1) * elementPerPage
+    let end = totalPages * elementPerPage + elementPerPage
+    let newPokemons = pokemons.slice(begin, end)
+    setTemporalPokemons(newPokemons)
+    setCurrentPage(totalPages - 1)
+  }
+  const goToBegining = () => {
+    let begin = 0
+    let end = elementPerPage
+    let newPokemons = pokemons.slice(begin, end)
+    setTemporalPokemons(newPokemons)
+    setCurrentPage(0)
+  }
   return (
     <Row>
       <Row alignCenter>
         <Button onClick={backPage}>First</Button>
-        <Button>{'<'}</Button>
+        <Button onClick={goToBegining}>{'<'}</Button>
         <div className='page-counter'>Page: 1</div>
         <Button onClick={nextPage}>{'>'}</Button>
-        <Button>Last</Button>
+        <Button onClick={goToEnd}>Last</Button>
       </Row>
       <Row>
       {
