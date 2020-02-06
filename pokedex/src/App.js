@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import store from './store'
 import { Provider } from 'react-redux';
-import { Home } from "./containers";
+import { Home, PokemonDetail } from "./containers";
 import { Head } from './components/'
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
       <Head />
       <Router>
         <Route exact path="/" component={Home} />
-        <Route component={Home} path="/pokemon/:name" />
+        <Route component={PokemonDetail} path="/pokemon/:name" />
       </Router>
     </Provider>
     )

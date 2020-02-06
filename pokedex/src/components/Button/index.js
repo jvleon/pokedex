@@ -14,7 +14,7 @@ export default styled.button`
     color: #fff;
   }
   &:active {
-    box-shadow: inset 0 1px 10px #000;
+    box-shadow: inset 0 1px 10px rgba(0,0,0,.25);
   }
   &:disabled {
     background: gray;
