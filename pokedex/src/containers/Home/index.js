@@ -6,7 +6,8 @@ import {
   Row
 } from './styled'
 import {
-  Mosaic
+  Mosaic,
+  Loading
 } from '../../components'
 
 class Home extends Component {
@@ -20,7 +21,7 @@ class Home extends Component {
 
         <Row>
         {
-          pokemons && pokemons.length > 0 && <Mosaic pokemons={pokemons} />
+          pokemons && pokemons.length > 0 ? <Mosaic pokemons={pokemons} /> : <Loading />
         }
         </Row>
       </MainContainer>

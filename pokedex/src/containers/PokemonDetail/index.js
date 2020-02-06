@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { getPokedex } from '../../actions/getData'
 import {
-  MainContainer,
-  Row
+  MainContainer
 } from './styled'
 import {
-  Card
+  Card,
+  Loading
 } from '../../components'
 class PokemonDetail  extends Component {
   constructor () {
@@ -28,10 +29,19 @@ class PokemonDetail  extends Component {
   }
   render() {
     let { pokemons } = this.props
+    let pkname = this.props.match.params.name
     return (
       <MainContainer>
       {
-        pokemons && pokemons.length > 0 && this.findpokemonData()
+        pokemons && pokemons.length > 0 && pkname ? 
+        this.findpokemonData() 
+          :
+          pkname ? 
+            <Loading />
+            :
+            <Redirect
+              to='/'
+            />
       }
       </MainContainer>
     )
