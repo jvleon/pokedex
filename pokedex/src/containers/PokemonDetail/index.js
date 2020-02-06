@@ -9,16 +9,30 @@ import {
   Card
 } from '../../components'
 class PokemonDetail  extends Component {
+  constructor () {
+    super()
+    this.state = {
+      currentPokemon: []
+    }
+    this.findpokemonData = this.findpokemonData.bind(this)
+  }
   componentDidMount () {
     this.props.getPokedex()
   }
+  findpokemonData () {
+    let { pokemons } = this.props
+    let pkname = this.props.match.params.name
+    let pokemon = pokemons.filter(({ name }) => name == pkname)
+    return <Card pokemon={pokemon} />
+
+  }
   render() {
-    console.log(this.props)
+    let { pokemons } = this.props
     return (
       <MainContainer>
-        <Row>
-          <Card />
-        </Row>
+      {
+        pokemons && pokemons.length > 0 && this.findpokemonData()
+      }
       </MainContainer>
     )
   }
