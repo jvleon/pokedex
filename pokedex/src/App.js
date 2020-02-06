@@ -12,8 +12,8 @@ import { Head } from './components/'
 const App = () => {
   return (
     <Provider store={store}>
-      <Head />
       <Router>
+        <Head />
         <Route exact path="/" component={Home} />
         <Route component={PokemonDetail} path="/pokemon/:name" />
       </Router>

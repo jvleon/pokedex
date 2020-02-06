@@ -8,8 +8,11 @@ export const Header = styled.header`
   box-sizing: border-box;
   align-items: flex-end;
   background: linear-gradient(to bottom, #F8FFAE, #43C6AC);
-  & > img {
+  & > a {
     width: 300px;
+  }
+  &  img {
+    width: 100%;
   }
   @media screen and (max-width: 500px) {
     justify-content: center;
