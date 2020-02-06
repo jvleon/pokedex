@@ -11,4 +11,7 @@ export const Header = styled.header`
   & > img {
     width: 300px;
   }
+  @media screen and (max-width: 500px) {
+    justify-content: center;
+  }
 `
