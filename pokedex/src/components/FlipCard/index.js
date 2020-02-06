@@ -13,13 +13,17 @@ const Flip = ({ onClick, data }) => (
       <FlipCardInner>
         <FlipCardFront>
           <img
-            src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
-            alt='pokemon'
+            src={data.extra_data && data.extra_data.sprites && data.extra_data.sprites.front_default}
+            alt={data.name}
           />
         </FlipCardFront>
         <FlipCardBack>
-          <span>Bulbasor</span>
-          <div>grass</div>
+          <span>{data.name}</span>
+          {data.extra_data && data.extra_data.types && data.extra_data.types.length > 0 && 
+            data.extra_data.types.map((type, i) => (
+              <div key={i}>{type.type.name}</div>
+            ))
+          }
         </FlipCardBack>
       </FlipCardInner>
     </FlipCard>
