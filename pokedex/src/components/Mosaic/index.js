@@ -3,9 +3,10 @@ import {
   Row
 } from './styled'
 import { Flip, Button } from '../'
+import { withRouter } from 'react-router-dom'
 
 
-const Mosaic = ({ pokemons }) => {
+const Mosaic = ({ pokemons, history: { push } }) => {
   const [temporalPokemons, setTemporalPokemons] = useState([])
   const [elementPerPage, setElementsPerPage] = useState(8)
   const [currentPage, setCurrentPage] = useState(0)
@@ -61,7 +62,7 @@ const Mosaic = ({ pokemons }) => {
       <Row>
       {
         temporalPokemons.map((pokemon, i) => (
-          <Flip key={i} data={pokemon} onClick={() => console.log(this.props)} />
+          <Flip key={i} data={pokemon} onClick={push} />
         ))
       } 
       </Row>
@@ -69,4 +70,4 @@ const Mosaic = ({ pokemons }) => {
   )
 }
 
-export default Mosaic
+export default withRouter(Mosaic)
