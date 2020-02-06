@@ -3,6 +3,9 @@ import styled from 'styled-components'
 export const FlipCardContainer = styled.div`
   width: 25%;
   height: 300px;
+  @media screen and (max-width: 500px) {
+    width: 50%;
+  }
 `
 
 export const FlipCard = styled.div`
