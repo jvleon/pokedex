@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import { getPokedex } from '../../actions/getData'
 import {
   MainContainer
@@ -39,7 +39,7 @@ class PokemonDetail  extends Component {
           pkname ? 
             <Loading />
             :
-            <Redirect
+            <Redirect push
               to='/'
             />
       }
@@ -58,4 +58,4 @@ const MapDispatchToProps = {
   getPokedex
 }
 
-export default connect(MapStateToProps, MapDispatchToProps)(PokemonDetail)
+export default withRouter(connect(MapStateToProps, MapDispatchToProps)(PokemonDetail))
