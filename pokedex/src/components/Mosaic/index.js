@@ -52,11 +52,11 @@ const Mosaic = ({ pokemons }) => {
   return (
     <Row>
       <Row alignCenter>
-        <Button onClick={backPage}>First</Button>
-        <Button onClick={goToBegining}>{'<'}</Button>
-        <div className='page-counter'>Page: 1</div>
-        <Button onClick={nextPage}>{'>'}</Button>
-        <Button onClick={goToEnd}>Last</Button>
+        <Button onClick={goToBegining} disabled={currentPage === 0}>First</Button>
+        <Button onClick={backPage} disabled={currentPage === 0}>{'<'}</Button>
+        <div className='page-counter'>Page: {currentPage + 1}</div>
+        <Button onClick={nextPage} disabled={totalPages === (currentPage + 1)}>{'>'}</Button>
+        <Button onClick={goToEnd} disabled={totalPages === (currentPage + 1)}>Last</Button>
       </Row>
       <Row>
       {
