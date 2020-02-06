@@ -6,7 +6,7 @@ export const pokemons = (state = initialValue, { type, payload }) => {
     case GET_ALL_POKEMONS:
       return {
         ...state,
-        ...payload
+        pokemons: [...payload]
       }
     default:
       return state
