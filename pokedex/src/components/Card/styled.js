@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Frame = styled.div`
   width: 50%;
   margin: 100px auto;
-  height: 200px;
+  height: 300px;
   display: flex;
   box-shadow: 0 2px 15px rgba(0,0,0,.25);
   padding: 10px;

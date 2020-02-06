@@ -23,7 +23,7 @@ class PokemonDetail  extends Component {
     let { pokemons } = this.props
     let pkname = this.props.match.params.name
     let pokemon = pokemons.filter(({ name }) => name == pkname)
-    return <Card pokemon={pokemon} />
+    return <Card pokemon={pokemon[0]} />
 
   }
   render() {

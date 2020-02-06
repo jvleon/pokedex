@@ -6,32 +6,48 @@ import {
   BaseData,
   Stats
 } from './styled'
+import { pokemons } from '../../reducers/pokemon'
 
 const Card = ({ pokemon }) => (
   <Frame>
+  {console.log('pokemon>>', pokemon)}
     <LeftBox>
-      <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png' />
+      <img
+        src={pokemon.extra_data && pokemon.extra_data.sprites && pokemon.extra_data.sprites.front_default}
+        alt={pokemon.name}
+      />
     </LeftBox>
     <RightBox>
       <BaseData>
-        <span>Name: Pikachu</span>
+        <span>Name: {pokemon.name}</span>
         <span>Types:</span>
-        <div>fire</div>
-        <div>poison</div>
+        {
+          pokemon.extra_data && pokemon.extra_data.types && pokemon.extra_data.types.map(({ type: { name } }) =>(
+            <div>{name}</div>
+          ))
+        }
       </BaseData>
       <Stats>
         <div className='abilities'>
           <span>Abilities: </span>
           <div>
-            <span>chlorophyll</span>
+            {
+              pokemon.extra_data && pokemon.extra_data.abilities.map(({ ability: { name } }, i) => (
+                <span key={i}>{name} </span>
+              ))
+            }
           </div>
         </div>
         <div className='stats'>
           <span>Stats: </span>
-          <div>
-            <span>speed-</span>
-            <span>45</span>
-          </div>
+          {
+            pokemon.extra_data && pokemon.extra_data.stats.map(({ base_stat, stat: { name } }, i) => (
+              <div key={i}>
+                <span>{name} - </span>
+                <span>{base_stat}</span>
+              </div>
+            ))
+          }
         </div>
       </Stats>
     </RightBox>
