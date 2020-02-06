@@ -5,7 +5,7 @@ import {
 import { Flip, Button } from '../'
 
 
-const Mosaic = () => (
+const Mosaic = ({ pokemons }) => (
   <Row>
     <Row alignCenter>
       <Button>First</Button>
@@ -15,14 +15,11 @@ const Mosaic = () => (
       <Button>Last</Button>
     </Row>
     <Row>
-      <Flip />
-      <Flip />
-      <Flip />
-      <Flip />
-      <Flip />
-      <Flip />
-      <Flip />
-      <Flip />
+    {
+      pokemons.map((pokemon, i) => (
+        <Flip key={i} data={pokemon} onClick={() => console.log(this.props)} />
+      ))
+    } 
     </Row>
   </Row>
 )
