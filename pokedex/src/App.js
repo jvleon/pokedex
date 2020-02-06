@@ -15,7 +15,6 @@ const App = () => {
       <Head />
       <Router>
         <Route exact path="/" component={Home} />
-        <Route component={PokemonDetail} path="/pokemon/" />
         <Route component={PokemonDetail} path="/pokemon/:name" />
       </Router>
     </Provider>
