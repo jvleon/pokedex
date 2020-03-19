@@ -9,7 +9,7 @@ import {
 
 const Flip = ({ onClick, data }) => (
   <FlipCardContainer>
-    <FlipCard onClick={() => onClick(`pokemon/${data.name}`)}>
+    <FlipCard onClick={() => onClick(`pokedex/pokemon/${data.name}`)}>
       <FlipCardInner>
         <FlipCardFront>
           <img
