@@ -14,8 +14,8 @@ const App = () => {
     <Provider store={store}>
       <Router>
         <Head />
-        <Route exact path="/" component={Home} />
-        <Route component={PokemonDetail} path="/pokemon/:name" />
+        <Route exact path="/pokedex" component={Home} />
+        <Route component={PokemonDetail} path="/pokedex/pokemon/:name" />
       </Router>
     </Provider>
     )

@@ -5,8 +5,8 @@ import { withRouter, Link } from 'react-router-dom'
 
 const Head = () => (
   <Header>
-    <Link to='/' styles={{  }}>
-      <img src={logo} alt='logo' />
+    <Link to='/pokedex'>
+      <img src={logo} alt='logo'/>
     </Link>
   </Header>
 )

@@ -39,8 +39,9 @@ class PokemonDetail  extends Component {
           pkname ? 
             <Loading />
             :
-            <Redirect push
-              to='/'
+            <Redirect 
+              push
+              to='/pokedex'
             />
       }
       </MainContainer>
