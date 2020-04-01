@@ -6,7 +6,6 @@ import {
   BaseData,
   Stats
 } from './styled'
-import { pokemons } from '../../reducers/pokemon'
 
 const Card = ({ pokemon }) => (
   <Frame>

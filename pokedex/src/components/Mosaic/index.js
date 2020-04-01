@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom'
 
 const Mosaic = ({ pokemons, history: { push } }) => {
   const [temporalPokemons, setTemporalPokemons] = useState([])
-  const [elementPerPage, setElementsPerPage] = useState(8)
+  const elementPerPage = 8
   const [currentPage, setCurrentPage] = useState(0)
   const [totalPages, setTotalPages]= useState(0)
   
